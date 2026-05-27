@@ -3,6 +3,19 @@ KWELI KWELI MINISTRIES — settings.py
 """
 
 from pathlib import Path
+import os
+
+# Read environment variables when deployed
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-local-dev-key')
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+
+# Database — uses DATABASE_URL on Render, local PostgreSQL in development
+import dj_database_url
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgresql://postgres:admin123@localhost:5432/kwelikweli_db'
+    )
+}
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
