@@ -86,41 +86,54 @@ REST_FRAMEWORK = {
 
 CORS_ALLOW_ALL_ORIGINS = True
 JAZZMIN_SETTINGS = {
-    "site_title": "Kweli Kweli Admin",
+  "site_title": "Kweli Kweli Admin",
     "site_header": "Kweli Kweli Backend",
-    "site_brand": "Kweli Kweli",
-    "welcome_sign": "Welcome to Kweli Kweli Management Portal",
+    "site_brand": "Kweli Kweli Portal",
+    "welcome_sign": "Welcome to the Kweli Kweli Management System",
     "search_model": ["sermons.Sermon", "chapel.Chapel"],
-    "show_ui_builder": True, # This adds a live theme switcher gear icon on your live site!
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "sermons.Sermon": "fas fa-video",
+        "chapel.Chapel": "fas fa-church",
+        "college.College": "fas fa-graduation-cap",
+        "prayers.Prayer": "fas fa-hands-assembled"
+    },
+    # This turns on the live color customizer gear icon on your dashboard!
+    "show_ui_builder": True,
 }
 
 JAZZMIN_UI_TWEAKS = {
-    "navbar_small_text": False,
+   "navbar_small_text": False,
     "footer_small_text": False,
     "body_small_text": False,
     "brand_small_text": False,
-    "brand_colour": "navbar-dark",
-    "accent": "accent-primary",
-    "navbar": "navbar-slate navbar-dark", # Changes top bar styling
-    "no_navbar_border": False,
-    "navbar_fixed": True,
-    "layout_options": [],
-    "side_nav_fixed": True,
-    "sidebar": "sidebar-dark-primary", # Sleek dark sidebar
-    "sidebar_nav_small_text": False,
-    "sidebar_disable_expand": False,
-    "sidebar_nav_child_indent": True,
-    "sidebar_nav_compact_sidebar": False,
-    "sidebar_nav_legacy_style": False,
-    "sidebar_nav_flat_style": False,
-    "theme": "flatly", # Beautiful, clean modern theme layout
+    
+    # Color Themes
+    "theme": "simplex",                       # Vibrant, clean theme with striking red/dark accents
     "dark_mode_theme": None,
+    
+    # Component Styling
+    "brand_colour": "navbar-danger",          # Bold brand color background for the top left logo area
+    "navbar": "navbar-dark bg-dark",          # Sleek, professional jet-black top navbar
+    "sidebar": "sidebar-dark-danger",         # Dark sidebar with rich red highlights matching active sections
+    "accent": "accent-danger",                # Active links and form focus rings use the primary accent
+    
+    # Layout configuration
+    "navbar_fixed": True,
+    "side_nav_fixed": True,
+    "no_navbar_border": True,
+    "sidebar_nav_child_indent": True,
+    
+    # Make buttons big, bright, and impossible to miss!
     "button_classes": {
-        "primary": "btn-primary",
-        "secondary": "btn-secondary",
-        "info": "btn-info",
-        "warning": "btn-warning",
-        "danger": "btn-danger",
-        "success": "btn-success"
+        "primary": "btn-danger shadow-sm font-weight-bold",   # Primary "Save" buttons turn into bold, vibrant red action items
+        "secondary": "btn-outline-secondary",                 # Subtle outline for back/cancel buttons
+        "info": "btn-info text-white",                        # Clear bright blue for informational triggers
+        "warning": "btn-warning text-dark",                   # Warm gold for change/history items
+        "danger": "btn-dark text-danger border-danger",       # Menacing dark border for deletes
+        "success": "btn-success font-weight-bold"             # Vibrant green for add/create buttons
     }
 }
