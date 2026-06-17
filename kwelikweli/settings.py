@@ -86,54 +86,56 @@ REST_FRAMEWORK = {
 
 CORS_ALLOW_ALL_ORIGINS = True
 JAZZMIN_SETTINGS = {
-  "site_title": "Kweli Kweli Admin",
-    "site_header": "Kweli Kweli Backend",
-    "site_brand": "Kweli Kweli Portal",
-    "welcome_sign": "Welcome to the Kweli Kweli Management System",
-    "search_model": ["sermons.Sermon", "chapel.Chapel"],
+    "site_title": "Kweli Kweli Admin",
+    "site_header": "Kweli Kweli Ministries",
+    "site_brand": "Kweli Kweli",
+    "welcome_sign": "Welcome to Kweli Kweli Ministries Admin",
+    "copyright": "Kweli Kweli Ministries 2025",
     "show_sidebar": True,
     "navigation_expanded": True,
     "icons": {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
-        "sermons.Sermon": "fas fa-video",
-        "chapel.Chapel": "fas fa-church",
-        "college.College": "fas fa-graduation-cap",
-        "prayers.Prayer": "fas fa-hands-assembled"
+        "sermons.Sermon": "fas fa-bible",
+        "chapel.ChapelVideo": "fas fa-fire",
+        "college.Course": "fas fa-graduation-cap",
+        "college.Application": "fas fa-file-alt",
+        "prayers.PrayerRequest": "fas fa-pray",
     },
-    # This turns on the live color customizer gear icon on your dashboard!
-    "show_ui_builder": True,
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-circle",
+    "related_modal_active": True,
+    "changeform_format": "horizontal_tabs",
 }
 
 JAZZMIN_UI_TWEAKS = {
-   "navbar_small_text": False,
+    "navbar_small_text": False,
     "footer_small_text": False,
     "body_small_text": False,
     "brand_small_text": False,
-    
-    # Color Themes
-    "theme": "simplex",                       # Vibrant, clean theme with striking red/dark accents
-    "dark_mode_theme": None,
-    
-    # Component Styling
-    "brand_colour": "navbar-danger",          # Bold brand color background for the top left logo area
-    "navbar": "navbar-dark bg-dark",          # Sleek, professional jet-black top navbar
-    "sidebar": "sidebar-dark-danger",         # Dark sidebar with rich red highlights matching active sections
-    "accent": "accent-danger",                # Active links and form focus rings use the primary accent
-    
-    # Layout configuration
-    "navbar_fixed": True,
-    "side_nav_fixed": True,
+    "brand_colour": "navbar-warning",
+    "accent": "accent-warning",
+    "navbar": "navbar-dark",
     "no_navbar_border": True,
+    "navbar_fixed": True,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-warning",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
     "sidebar_nav_child_indent": True,
-    
-    # Make buttons big, bright, and impossible to miss!
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "default",
+    "dark_mode_theme": None,
     "button_classes": {
-        "primary": "btn-danger shadow-sm font-weight-bold",   # Primary "Save" buttons turn into bold, vibrant red action items
-        "secondary": "btn-outline-secondary",                 # Subtle outline for back/cancel buttons
-        "info": "btn-info text-white",                        # Clear bright blue for informational triggers
-        "warning": "btn-warning text-dark",                   # Warm gold for change/history items
-        "danger": "btn-dark text-danger border-danger",       # Menacing dark border for deletes
-        "success": "btn-success font-weight-bold"             # Vibrant green for add/create buttons
-    }
+        "primary": "btn-warning",
+        "secondary": "btn-outline-warning",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success",
+    },
 }
