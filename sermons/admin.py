@@ -22,7 +22,7 @@ class SermonAdmin(admin.ModelAdmin):
             'fields': ('title', 'speaker', 'date', 'series', 'description')
         }),
         ('Video & Media', {
-            'fields': ('fb_url', 'thumbnail')
+            'fields': ('fb_url', 'youtube_id', 'thumbnail')
         }),
         ('Publishing', {
             'fields': ('is_published',)
